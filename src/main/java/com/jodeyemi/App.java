@@ -39,27 +39,25 @@ public class App extends ListenerAdapter
         // Create a Scanner for the message
         Scanner input = new Scanner(event.getMessage().getContentRaw());
 
-        //Command Documentation
+        //List of Commands available to the user
         ArrayList<String> commands = new ArrayList<>();
 
-
+        // Ping Command
         commands.add("ping");
-        commands.add("commands");
-        commands.add("add");\
-
-        // Ping Commadn
         if (objMessage.getContentRaw().equalsIgnoreCase(Ref.prefix + "ping"))
         {
             objMessageChannel.sendMessage(objUser.getAsMention() + " Pong!").queue();
         }
 
         //Help Command
+        commands.add("commands");
         if (objMessage.getContentRaw().equalsIgnoreCase(Ref.prefix + "commands"))
         {
             objMessageChannel.sendMessage(objUser.getAsMention() + commands).queue();
         }
 
         //Add Command
+        commands.add("add");
         if (objMessage.getContentRaw().equalsIgnoreCase(Ref.prefix + "add"))
         {
             // Gets rid of the command call
