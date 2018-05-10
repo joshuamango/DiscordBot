@@ -37,7 +37,7 @@ public class App extends ListenerAdapter
         Message objMessage = event.getMessage();
 
         // Create a Scanner for the message
-        Scanner input = new Scanner(event.getMessage().getContentRaw());
+        Scanner input = new Scanner(objMessage.getContentRaw());
 
         //List of Commands available to the user
         ArrayList<String> commands = new ArrayList<>();
@@ -49,6 +49,26 @@ public class App extends ListenerAdapter
             objMessageChannel.sendMessage(objUser.getAsMention() + " Pong!").queue();
         }
 
+        //Add Command
+        commands.add("add");
+        if (objMessage.getContentRaw().contains(Ref.prefix + "add"))
+        {
+            // Gets rid of the command call
+            input.next();
+
+            // Used to store the sum
+            double sum = 0.0;
+
+            // Adds the value of each integer in the message to sum
+            while(input.hasNext())
+            {
+                sum += Double.valueOf(input.next());
+            }
+
+            // Returns the sum of firstNumber and secondNumber
+            objMessageChannel.sendMessage(objUser.getAsMention() + "    Sum: " + sum).queue();
+        }
+
         //Help Command
         commands.add("commands");
         if (objMessage.getContentRaw().equalsIgnoreCase(Ref.prefix + "commands"))
@@ -56,20 +76,6 @@ public class App extends ListenerAdapter
             objMessageChannel.sendMessage(objUser.getAsMention() + commands).queue();
         }
 
-        //Add Command
-        commands.add("add");
-        if (objMessage.getContentRaw().equalsIgnoreCase(Ref.prefix + "add"))
-        {
-            // Gets rid of the command call
-            input.next();
-
-            // Stores the values the user wants to add
-            int firstNumber = Integer.valueOf(input.next());
-            int secondNumber = Integer.valueOf(input.next());
-
-            // Returns the sum of firstNumber and secondNumber
-            objMessageChannel.sendMessage(objUser.getAsMention() + (firstNumber + secondNumber)).queue();
-        }
     }
 
     // Recursive Factorial
