@@ -15,7 +15,11 @@
   <ul> 
     <li> commands: Lists all available commands
     <li> ping: Returns message "Pong!"
-    <li> add: Allows the user to add two integers
+    <li> add: Allows the user to add two numbers
+    <li> multiply: Returns the product of two numbers
+    <li> stats: Displays some Fortnite stats for a specific player
+    <li> factorial: Returns the factorial of an integer
+    <li> divide: Allows the user to divide several numbers
   </ul>
 </code>
 <div>
