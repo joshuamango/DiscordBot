@@ -186,7 +186,7 @@ public class App extends ListenerAdapter
             objMessageChannel.sendMessage(objUser.getAsMention() + "    Quotient: " + quotient).queue();
         }
 
-        // Divide Command
+        // Factorial Commmand
         commands.add("factorial");
         if (objMessage.getContentRaw().contains(Ref.prefix + "factorial"))
         {
