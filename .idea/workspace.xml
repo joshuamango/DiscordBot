@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4208bfa0-03cc-4257-83fe-e132d7b06f23" name="Default" comment="">
+    <list default="true" id="4208bfa0-03cc-4257-83fe-e132d7b06f23" name="Default" comment="Add more statistics to &quot;stats&quot; command">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jodeyemi/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jodeyemi/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jodeyemi/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jodeyemi/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jodeyemi/Ref.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jodeyemi/Ref.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -35,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="App.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jodeyemi/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1888">
-              <caret line="166" column="9" lean-forward="true" selection-start-line="166" selection-start-column="9" selection-end-line="166" selection-end-column="9" />
+            <state relative-caret-position="157">
+              <caret line="137" column="60" selection-start-line="137" selection-start-column="60" selection-end-line="137" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -47,20 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JSONTokener.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/json/json/20160810/json-20160810.jar!/org/json/JSONTokener.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2192">
-              <caret line="151" column="22" selection-start-line="151" selection-start-column="22" selection-end-line="151" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Ref.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Ref.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jodeyemi/Ref.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="4" column="89" selection-start-line="4" selection-start-column="89" selection-end-line="4" selection-end-column="89" />
+            <state relative-caret-position="32">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -86,13 +77,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/jodeyemi/Ref.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jodeyemi/App.kt" />
         <option value="$PROJECT_DIR$/src/main/java/com/jodeyemi/Appbroken.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jodeyemi/Consumer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jodeyemi/GenericStack.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/jodeyemi/App.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jodeyemi/Ref.java" />
       </list>
     </option>
   </component>
@@ -104,8 +95,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="338" />
-    <option name="y" value="102" />
+    <option name="x" value="453" />
+    <option name="y" value="57" />
     <option name="width" value="1273" />
     <option name="height" value="924" />
   </component>
@@ -115,7 +106,8 @@
       <foldersAlwaysOnTop value="false" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -153,8 +145,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -258,22 +249,22 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="338" y="102" width="1273" height="924" extended-state="0" />
+    <frame x="453" y="57" width="1273" height="924" extended-state="0" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32367757" />
+      <window_info active="true" anchor="bottom" id="Messages" order="7" visible="true" weight="0.32367757" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="1" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32880098" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.0062972293" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32939914" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.21536525" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32871535" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" side_tool="true" visible="true" weight="0.24741448" />
+      <window_info content_ui="combo" id="Project" order="6" side_tool="true" visible="true" weight="0.24741448" />
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
@@ -292,28 +283,28 @@
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="right" id="Coverage" order="4" side_tool="true" weight="0.32985386" />
-      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.32939914" />
+      <window_info anchor="bottom" id="Version Control" order="2" show_stripe_button="false" />
       <window_info anchor="right" id="Theme Preview" order="2" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.32403433" />
       <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.24947807" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="6" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="bottom" id="Version Control" order="2" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.32939914" />
       <window_info id="Image Layers" order="0" />
       <window_info id="Designer" order="1" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Find" order="5" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info anchor="bottom" id="Terminal" order="3" weight="0.32939914" />
+      <window_info anchor="right" id="Coverage" order="4" side_tool="true" weight="0.32985386" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info id="Capture Tool" order="3" />
       <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.32403433" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.32939914" />
       <window_info anchor="right" id="Maven Projects" order="5" />
       <window_info id="Favorites" order="4" side_tool="true" />
     </layout-to-restore>
@@ -331,12 +322,47 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add more statistics to &quot;stats&quot; command" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add more statistics to &quot;stats&quot; command" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <option name="time" value="1" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/json/json/20160810/json-20160810.jar!/org/json/JSONTokener.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2416">
+          <caret line="151" column="22" selection-start-line="151" selection-start-column="22" selection-end-line="151" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jodeyemi/Ref.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" column="89" selection-start-line="4" selection-start-column="89" selection-end-line="4" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jodeyemi/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2656">
+          <caret line="166" column="9" lean-forward="true" selection-start-line="166" selection-start-column="9" selection-end-line="166" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="496">
@@ -623,13 +649,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jodeyemi/Ref.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="89" selection-start-line="4" selection-start-column="89" selection-end-line="4" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/json/json/20160810/json-20160810.jar!/org/json/JSONArray.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
@@ -653,7 +672,7 @@
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/json/json/20160810/json-20160810.jar!/org/json/JSONTokener.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2192">
+        <state relative-caret-position="16">
           <caret line="151" column="22" selection-start-line="151" selection-start-column="22" selection-end-line="151" selection-end-column="22" />
         </state>
       </provider>
@@ -667,11 +686,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jodeyemi/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1888">
-          <caret line="166" column="9" lean-forward="true" selection-start-line="166" selection-start-column="9" selection-end-line="166" selection-end-column="9" />
+        <state relative-caret-position="157">
+          <caret line="137" column="60" selection-start-line="137" selection-start-column="60" selection-end-line="137" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jodeyemi/Ref.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>

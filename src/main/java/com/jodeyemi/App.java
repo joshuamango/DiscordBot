@@ -7,6 +7,8 @@ import net.dv8tion.jda.core.entities.MessageChannel;
 import net.dv8tion.jda.core.entities.User;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -101,43 +103,66 @@ public class App extends ListenerAdapter
             // Strings
             String ign;
             String platform;
-            String stats = "";
+            String wins;
+            String matches;
+            String kills;
+            String kpg;
+            String winRatio;
 
             try {
 
-                // Get the name of the user
+                // Get the users in-game name and platform
                 ign = input.next();
-                System.out.println("IGN: " + ign);
-
-                // Get the platform the user plays on
                 platform = input.next();
-                System.out.println("Platform: " + platform);
 
                 // URL needed to connect to the API
                 URL url = new URL("https://api.fortnitetracker.com/v1/profile/" + platform + "/" + ign);
                 System.out.println("URL: " + url.toString());
 
-                // Create a connection object
+                // Open a connection to the url using the API key
                 URLConnection urlConnection = url.openConnection();
-                urlConnection.setRequestProperty("TRN-Api-Key", "4c6bac44-9183-4505-b77d-4d7cd93756f9");
+                urlConnection.setRequestProperty("TRN-Api-Key", Ref.APIKey);
 
+                // Create an inputStream from the url
                 InputStream inputStream = urlConnection.getInputStream();
+
+                // Create a scanner to read the inputStream
                 Scanner streamReader = new Scanner(inputStream);
 
+                // Create a StringBuilder
+                StringBuilder stringBuilder = new StringBuilder();
+
+                // Add all of the JSON from inputStream to stringBuilder
                 while(streamReader.hasNext())
                 {
-                    if (streamReader.next().contains("value")) {
-                        streamReader.next();
-                        streamReader.next();
-                        objMessageChannel.sendMessage(objUser.getAsMention() + "    TRN: " + streamReader.next()).queue();
-                        break;
-                    }
+                    stringBuilder.append(streamReader.next()).append(" ");
                 }
 
+                // Create a JSONObject to parse the JSON stored in stringBuilder
+                JSONObject jsonObject = new JSONObject(stringBuilder.toString());
+
+                // Parse JSON using methods in the JSONObject class to get player statistics
+                matches = jsonObject.getJSONObject("stats").getJSONObject("p2").getJSONObject("matches").getString("displayValue");
+                wins = jsonObject.getJSONObject("stats").getJSONObject("p2").getJSONObject("top1").getString("displayValue");
+                winRatio = jsonObject.getJSONObject("stats").getJSONObject("p2").getJSONObject("winRatio").getString("displayValue");
+                kills = jsonObject.getJSONObject("stats").getJSONObject("p2").getJSONObject("kills").getString("displayValue");
+                kpg = jsonObject.getJSONObject("stats").getJSONObject("p2").getJSONObject("kpg").getString("displayValue");
+
+                // Send message with amount of wins
+                objMessageChannel.sendMessage(objUser.getAsMention() +
+                                                                    "```javascript\nMatches:    " + matches + "\n"
+                                                                          + "Wins:       " + wins + "\n"
+                                                                          + "Win Ratio:  " + winRatio + "%\n"
+                                                                          + "Kills:      " + kills + "\n"
+                                                                          + "KPG:        " + kpg + "```").queue();
             }
             catch (IOException ex)
             {
-                stats = "Error: Could not find stats";
+                objMessageChannel.sendMessage(objUser.getAsMention() + "    An error has occurred").queue();
+            }
+            catch(JSONException ex)
+            {
+                objMessageChannel.sendMessage(objUser.getAsMention() + "    Invalid player name").queue();
             }
 
         }
@@ -177,22 +202,16 @@ public class App extends ListenerAdapter
         commands.add("commands");
         if (objMessage.getContentRaw().equalsIgnoreCase(Ref.prefix + "commands"))
         {
+            // Send a list of each command available
             objMessageChannel.sendMessage(objUser.getAsMention() + commands).queue();
         }
     }
 
-    // Recursive Factorial
+    // Recursive Factorial method
     private int factorial(int number)
     {
         if (number == 0)
             return 1;
         return number * factorial(number - 1);
-    }
-
-
-    private String getStats(String ign) throws IOException
-    {
-
-        return "";
     }
 }
