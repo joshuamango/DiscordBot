@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4208bfa0-03cc-4257-83fe-e132d7b06f23" name="Default" comment="Add more statistics to &quot;stats&quot; command">
+    <list default="true" id="4208bfa0-03cc-4257-83fe-e132d7b06f23" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jodeyemi/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jodeyemi/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jodeyemi/Ref.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jodeyemi/Ref.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -35,7 +33,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="App.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jodeyemi/App.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="157">
@@ -47,7 +45,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ref.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Ref.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jodeyemi/Ref.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="32">
@@ -246,6 +244,14 @@
       <option name="presentableId" value="Default" />
       <updated>1525877538235</updated>
     </task>
+    <task id="LOCAL-00001" summary="Add more statistics to &quot;stats&quot; command">
+      <created>1526441288878</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1526441288878</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -677,6 +683,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jodeyemi/Ref.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="496">
@@ -691,13 +704,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jodeyemi/Ref.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
