@@ -58,144 +58,35 @@ public class App extends ListenerAdapter
         commands.add("add");
         if (objMessage.getContentRaw().contains(Ref.prefix + "add"))
         {
-            // Gets rid of text before the command call
-            while (!input.next().equals(Ref.prefix + "add"))
-                input.next();
-
-            // Used to store the sum
-            double sum = 0.0;
-
-            // Adds the value of each integer in the message to sum
-            while(input.hasNext())
-                sum += Double.valueOf(input.next());
-
-            // Returns the sum of firstNumber and secondNumber
-            objMessageChannel.sendMessage(objUser.getAsMention() + "    Sum: " + sum).queue();
+            add(objUser, objMessageChannel, input);
         }
 
         // Multiply command
         commands.add("multiply");
         if (objMessage.getContentRaw().contains(Ref.prefix + "multiply"))
         {
-            // Gets rid of text before the command call
-            while (!input.next().equals(Ref.prefix + "multiply"))
-                input.next();
-
-            // Used as a base
-            double product = 1.0;
-
-            // Multiplies the value of each double in the message by the product
-            while(input.hasNext())
-                product *= Double.valueOf(input.next());
-
-            // Returns the product of each number in the method call
-            objMessageChannel.sendMessage(objUser.getAsMention() + "    Product: " + product).queue();
+            multiply(objUser, objMessageChannel, input);
         }
 
         // Stats Command
         commands.add("stats");
         if (objMessage.getContentRaw().contains(Ref.prefix + "stats"))
         {
-            // Gets rid of the irrelevant text
-            while (!input.next().equals(Ref.prefix + "stats"))
-                input.next();
-
-            // Strings
-            String ign;
-            String platform;
-            String wins;
-            String matches;
-            String kills;
-            String kpg;
-            String winRatio;
-
-            try {
-
-                // Get the users in-game name and platform
-                ign = input.next();
-                platform = input.next();
-
-                // URL needed to connect to the API
-                URL url = new URL("https://api.fortnitetracker.com/v1/profile/" + platform + "/" + ign);
-                System.out.println("URL: " + url.toString());
-
-                // Open a connection to the url using the API key
-                URLConnection urlConnection = url.openConnection();
-                urlConnection.setRequestProperty("TRN-Api-Key", Ref.APIKey);
-
-                // Create an inputStream from the url
-                InputStream inputStream = urlConnection.getInputStream();
-
-                // Create a scanner to read the inputStream
-                Scanner streamReader = new Scanner(inputStream);
-
-                // Create a StringBuilder
-                StringBuilder stringBuilder = new StringBuilder();
-
-                // Add all of the JSON from inputStream to stringBuilder
-                while(streamReader.hasNext())
-                {
-                    stringBuilder.append(streamReader.next()).append(" ");
-                }
-
-                // Create a JSONObject to parse the JSON stored in stringBuilder
-                JSONObject jsonObject = new JSONObject(stringBuilder.toString());
-
-                // Parse JSON using methods in the JSONObject class to get player statistics
-                matches = jsonObject.getJSONObject("stats").getJSONObject("p2").getJSONObject("matches").getString("displayValue");
-                wins = jsonObject.getJSONObject("stats").getJSONObject("p2").getJSONObject("top1").getString("displayValue");
-                winRatio = jsonObject.getJSONObject("stats").getJSONObject("p2").getJSONObject("winRatio").getString("displayValue");
-                kills = jsonObject.getJSONObject("stats").getJSONObject("p2").getJSONObject("kills").getString("displayValue");
-                kpg = jsonObject.getJSONObject("stats").getJSONObject("p2").getJSONObject("kpg").getString("displayValue");
-
-                // Send message with amount of wins
-                objMessageChannel.sendMessage(objUser.getAsMention() +
-                                                                    "```javascript\nMatches:    " + matches + "\n"
-                                                                          + "Wins:       " + wins + "\n"
-                                                                          + "Win Ratio:  " + winRatio + "%\n"
-                                                                          + "Kills:      " + kills + "\n"
-                                                                          + "KPG:        " + kpg + "```").queue();
-            }
-            catch (IOException ex)
-            {
-                objMessageChannel.sendMessage(objUser.getAsMention() + "    An error has occurred").queue();
-            }
-            catch(JSONException ex)
-            {
-                objMessageChannel.sendMessage(objUser.getAsMention() + "    Invalid player name").queue();
-            }
-
+            stats(objUser, objMessageChannel, input);
         }
 
         // Divide Command
         commands.add("divide");
         if (objMessage.getContentRaw().contains(Ref.prefix + "divide"))
         {
-            // Gets rid of text before the command call
-            while (!input.next().equals(Ref.prefix + "divide"))
-                input.next();
-
-            // Used to store the sum
-            double quotient = Double.valueOf(input.next());
-
-            // Adds the value of each integer in the message to sum
-            while(input.hasNext())
-                quotient /= Double.valueOf(input.next());
-
-            // Returns the sum of firstNumber and secondNumber
-            objMessageChannel.sendMessage(objUser.getAsMention() + "    Quotient: " + quotient).queue();
+            divide(objUser, objMessageChannel, input);
         }
 
         // Divide Command
         commands.add("factorial");
         if (objMessage.getContentRaw().contains(Ref.prefix + "factorial"))
         {
-            // Gets rid of text before the command call
-            while (!input.next().equals(Ref.prefix + "factorial"))
-                input.next();
-
-            // Returns the sum of firstNumber and secondNumber
-            objMessageChannel.sendMessage(objUser.getAsMention() + "    Product: " + factorial(Integer.valueOf(input.next()))).queue();
+            factorial(objUser, objMessageChannel, input);
         }
 
         // Help Command
@@ -205,6 +96,144 @@ public class App extends ListenerAdapter
             // Send a list of each command available
             objMessageChannel.sendMessage(objUser.getAsMention() + commands).queue();
         }
+    }
+
+    // Sends message to user with some Fortnite statistics for a player on a specific platform
+    private void stats(User objUser, MessageChannel objMessageChannel, Scanner input)
+    {
+        // Gets rid of the irrelevant text
+        while (!input.next().equals(Ref.prefix + "stats"))
+            input.next();
+
+        // Strings
+        String ign;
+        String platform;
+        String wins;
+        String matches;
+        String kills;
+        String kpg;
+        String winRatio;
+
+        try {
+
+            // Get the users in-game name and platform
+            ign = input.next();
+            platform = input.next();
+
+            // URL needed to connect to the API
+            URL url = new URL("https://api.fortnitetracker.com/v1/profile/" + platform + "/" + ign);
+            System.out.println("URL: " + url.toString());
+
+            // Open a connection to the url using the API key
+            URLConnection urlConnection = url.openConnection();
+            urlConnection.setRequestProperty("TRN-Api-Key", Ref.APIKey);
+
+            // Create an inputStream from the url
+            InputStream inputStream = urlConnection.getInputStream();
+
+            // Create a scanner to read the inputStream
+            Scanner streamReader = new Scanner(inputStream);
+
+            // Create a StringBuilder
+            StringBuilder stringBuilder = new StringBuilder();
+
+            // Add all of the JSON from inputStream to stringBuilder
+            while(streamReader.hasNext())
+            {
+                stringBuilder.append(streamReader.next()).append(" ");
+            }
+
+            // Create a JSONObject to parse the JSON stored in stringBuilder
+            JSONObject jsonObject = new JSONObject(stringBuilder.toString());
+
+            // Parse JSON using methods in the JSONObject class to get player statistics
+            matches = jsonObject.getJSONObject("stats").getJSONObject("p2").getJSONObject("matches").getString("displayValue");
+            wins = jsonObject.getJSONObject("stats").getJSONObject("p2").getJSONObject("top1").getString("displayValue");
+            winRatio = jsonObject.getJSONObject("stats").getJSONObject("p2").getJSONObject("winRatio").getString("displayValue");
+            kills = jsonObject.getJSONObject("stats").getJSONObject("p2").getJSONObject("kills").getString("displayValue");
+            kpg = jsonObject.getJSONObject("stats").getJSONObject("p2").getJSONObject("kpg").getString("displayValue");
+
+            // Send message with amount of wins
+            objMessageChannel.sendMessage(objUser.getAsMention() +
+                    "```javascript\nMatches:    " + matches + "\n"
+                    + "Wins:       " + wins + "\n"
+                    + "Win Ratio:  " + winRatio + "%\n"
+                    + "Kills:      " + kills + "\n"
+                    + "KPG:        " + kpg + "```").queue();
+        }
+        catch (IOException ex)
+        {
+            objMessageChannel.sendMessage(objUser.getAsMention() + "    An error has occurred").queue();
+        }
+        catch(JSONException ex)
+        {
+            objMessageChannel.sendMessage(objUser.getAsMention() + "    Invalid player name").queue();
+        }
+    }
+
+    // Sends message to user with the sum of the numbers given
+    private void add(User objUser, MessageChannel objMessageChannel, Scanner input)
+    {
+        // Gets rid of text before the command call
+        while (!input.next().equals(Ref.prefix + "add"))
+            input.next();
+
+        // Used to store the sum
+        double sum = 0.0;
+
+        // Adds the value of each integer in the message to sum
+        while(input.hasNext())
+            sum += Double.valueOf(input.next());
+
+        // Returns the sum of firstNumber and secondNumber
+        objMessageChannel.sendMessage(objUser.getAsMention() + "    Sum: " + sum).queue();
+    }
+
+    // Sends message to user with the product of the numbers given
+    private void multiply(User objUser, MessageChannel objMessageChannel, Scanner input)
+    {
+        // Gets rid of text before the command call
+        while (!input.next().equals(Ref.prefix + "multiply"))
+            input.next();
+
+        // Used as a base
+        double product = 1.0;
+
+        // Multiplies the value of each double in the message by the product
+        while(input.hasNext())
+            product *= Double.valueOf(input.next());
+
+        // Returns the product of each number in the method call
+        objMessageChannel.sendMessage(objUser.getAsMention() + "    Product: " + product).queue();
+    }
+
+    // Sends message to user with the quotient of the numbers given
+    private void divide(User objUser, MessageChannel objMessageChannel, Scanner input)
+    {
+        // Gets rid of text before the command call
+        while (!input.next().equals(Ref.prefix + "divide"))
+            input.next();
+
+        // Used to store the sum
+        double quotient = Double.valueOf(input.next());
+
+        // Adds the value of each integer in the message to sum
+        while(input.hasNext())
+            quotient /= Double.valueOf(input.next());
+
+        // Returns the sum of firstNumber and secondNumber
+        objMessageChannel.sendMessage(objUser.getAsMention() + "    Quotient: " + quotient).queue();
+    }
+
+    // Sends message to user with the factorial of the integer given
+    private void factorial(User objUser, MessageChannel objMessageChannel, Scanner input)
+    {
+        // Gets rid of text before the command call
+        while (!input.next().equals(Ref.prefix + "factorial"))
+            input.next();
+
+        // Returns the sum of firstNumber and secondNumber
+        objMessageChannel.sendMessage(objUser.getAsMention() + "    Product: " + factorial(Integer.valueOf(input.next()))).queue();
     }
 
     // Recursive Factorial method
