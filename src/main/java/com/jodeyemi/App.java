@@ -82,7 +82,7 @@ public class App extends ListenerAdapter
             divide(objUser, objMessageChannel, input);
         }
 
-        // Divide Command
+        // Factorial Commmand
         commands.add("factorial");
         if (objMessage.getContentRaw().contains(Ref.prefix + "factorial"))
         {
